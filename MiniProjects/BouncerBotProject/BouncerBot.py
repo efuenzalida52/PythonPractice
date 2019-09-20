@@ -28,11 +28,13 @@ while True :
             known_users.remove(name)
             print(known_users)
             print()
-        #else: 
+        #else: (BROKEN)
             #print('okay, you have not been removed.')
-        #elif remove == 'n' # or remove == 'no':
+            
+        #elif remove == 'n' # or remove == 'no': (BROKEN)
             #print('okay, you have not been removed.')
-        elif remove == 'n': # or remove == 'no'
+            
+        elif remove == 'n': 
             print('okay, you have not been removed.')
         elif remove == 'no':
             print('okay, you have not been removed.')
