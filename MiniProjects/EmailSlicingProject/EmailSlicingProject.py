@@ -24,4 +24,19 @@
 ###      EMAIL SLICER       ###
 ###############################
 
+#Get user email address
+email = input('Please enter your email address: ').strip()#removes any extra characters
+print(email)
 
+#slice out username
+user = email[:email.index('@')] #beginning of email until @ sign
+
+
+#slice out domain name
+domain = email[email.index('@')+1 :] #start right after @ sign go till end
+
+#format message
+message = 'Your username is {} and your domain is {}'.format(user,domain)
+
+#display output message
+print(message)
