@@ -28,27 +28,22 @@ while True :
             known_users.remove(name)
             print(known_users)
             print()
-        #else: (BROKEN)
-            #print('okay, you have not been removed.')
             
-        #elif remove == 'n' # or remove == 'no': (BROKEN)
-            #print('okay, you have not been removed.')
-            
-        elif remove == 'n': 
+        elif remove == 'n' or remove == 'no':
             print('okay, you have not been removed.')
-        elif remove == 'no':
-            print('okay, you have not been removed.')
+
 
     else:
         print(helloMsg_F)
         print('{}, you are not on the list.'.format(name))
-        add = input('Would you like to be added to the list (y/n)?:' .lower())
-        if add == 'n' or 'no':
+        add = input('Would you like to be added to the list (y/n)?:'.strip().lower())
+
+        if add == 'yes' or 'y':
             known_users.append(name) #puts entered at end of list
             print(known_users)
-        elif remove == 'n':
+            
+        elif add == 'n' or add == 'no':
              print('okay, you have not been added.')
-        elif remove == 'no':
-            print('okay, you have not been added.')
-            print(known_users)
+
+        print(known_users)
 
