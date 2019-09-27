@@ -38,9 +38,93 @@ class Coin:
         choice = random.choice(heads_options)
         self.heads = choice
 
+class Penny(Coin):
+    def __init__(self):
+        data= {
+            "original_value": 0.01,
+            "clean_color": "bronze",
+            "rusty_color": "blue-greenish",
+            "num_edges": 1,
+            "diameter": 20.3,
+            "thickness": 1.52,
+            "mass": 3.56
+            }
+        super().__init__(**data)#super = parent class
 
 
-class DollarCoin(Coin):
+class Nickel(Coin):
+    def __init__(self):
+        data= {
+            "original_value": 0.05,
+            "clean_color": "nickle",
+            "rusty_color": "brownish",
+            "num_edges": 1,
+            "diameter": 25.9,
+            "thickness": 1.85,
+            "mass": 7.12
+            }
+        super().__init__(**data)
+
+
+class Dime(Coin):
+    def __init__(self):
+        data= {
+            "original_value": 0.10,
+            "clean_color": "tin",
+            "rusty_color": None, #as an example of ploymorphisim we are going to pretend dime doesn't rust
+            "num_edges": 1,
+            "diameter": 20.3,
+            "thickness": 1.52,
+            "mass": 3.56
+            }
+        super().__init__(**data)
+        
+    def rust(self): #polymorphisim example in the works
+        self.color = self.clean_color
+    def clean(self):
+        self.color= self.clean_color #this is not nesscarry since it's being inherited        
+
+class Quarter(Coin):
+    def __init__(self):
+        data= {
+            "original_value": 0.01,
+            "clean_color": "bronze",
+            "rusty_color": "brown-greenish",
+            "num_edges": 1,
+            "diameter": 18.0,
+            "thickness": 1.77,
+            "mass": 3.25
+            }
+        super().__init__(**data)
+
+class Half_Dollar(Coin):
+    def __init__(self):
+        data= {
+            "original_value": 0.50,
+            "clean_color": "silver",
+            "rusty_color": "blue",
+            "num_edges": 1,
+            "diameter": 24.5,
+            "thickness": 1.85,
+            "mass": 6.50
+            }
+        super().__init__(**data)
+
+#made up coin 
+class Third_Dollar(Coin):
+    def __init__(self):
+        data= {
+            "original_value": 0.75,
+            "clean_color": "platinum",
+            "rusty_color": "red-brown",
+            "num_edges": 1,
+            "diameter": 22.5,
+            "thickness": 3.15,
+            "mass": 9.5
+            }
+        super().__init__(**data)
+
+class Dollar_Coin(Coin):
     def __init__(self):
         data= {
             "original_value": 1.00,
@@ -50,6 +134,20 @@ class DollarCoin(Coin):
             "diameter": 22.5,
             "thickness": 3.15,
             "mass": 9.5
+            }
+        super().__init__(**data)#super = parent class
+
+#madeupcoin
+class Two_Dollar(Coin):
+    def __init__(self):
+        data= {
+            "original_value": 2.00,
+            "clean_color": "turquoise",
+            "rusty_color": "rose pink",
+            "num_edges": 1,
+            "diameter": 28.4,
+            "thickness": 2.50,
+            "mass": 12.00 #mm
             }
         super().__init__(**data)#super = parent class
 
