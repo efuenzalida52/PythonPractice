@@ -21,22 +21,25 @@ class Coin:
         else:
             self.color = self.rusty_color
 
-#rust method: changes coins color upon rust.
-    def rust(self):
+    def rust(self):                     #rust method: changes coins color upon rust.
        self.color = self.rusty_color
 
-#clean method: changes coin color back to default color
-    def clean(self):
+    def clean(self):                #clean method: changes coin color back to default color
         self.color = self.clean_color
 
     def __del__(self): #deconstructor
         print("Coin Spent!") #print when coin is destroyed
-
-#flip a coin  
+  
     def flip(self):
         heads_options =[True, False]
         choice = random.choice(heads_options)
         self.heads = choice
+
+    def __str__(self):
+        if self.original_value > 1.00:
+            return "${} Coin".format(int(self.original_value))
+        else:
+            return "{}p Coin".format(int(self.original_value*100))
 
 class Penny(Coin):
     def __init__(self):
@@ -87,13 +90,13 @@ class Dime(Coin):
 class Quarter(Coin):
     def __init__(self):
         data= {
-            "original_value": 0.01,
-            "clean_color": "bronze",
-            "rusty_color": "brown-greenish",
-            "num_edges": 1,
-            "diameter": 18.0,
-            "thickness": 1.77,
-            "mass": 3.25
+            "original_value": 0.25,
+            "clean_color": "silver",
+            "rusty_color": "brownish",
+            "num_edges": 7,
+            "diameter": 21.4,
+            "thickness": 1.7,
+            "mass": 5.00
             }
         super().__init__(**data)
 
@@ -103,10 +106,10 @@ class Half_Dollar(Coin):
             "original_value": 0.50,
             "clean_color": "silver",
             "rusty_color": "blue",
-            "num_edges": 1,
+            "num_edges": ,
             "diameter": 24.5,
-            "thickness": 1.85,
-            "mass": 6.50
+            "thickness": 1.78,
+            "mass": 8.00
             }
         super().__init__(**data)
 
@@ -151,5 +154,15 @@ class Two_Dollar(Coin):
             }
         super().__init__(**data)#super = parent class
 
-        
+#List of class functions I just created
+coins = [Penny(), Nickel(), Dime(), Quarter(), Half_Dollar(),
+         Third_Dollar(), Dollar_Coin(),Two_Dollar()]
 
+#loop through the list I just made and pull this data I am specifying
+for coin in coins:
+    arguments = [coin, coin.color, coin.value, coin.diameter,
+                 coin.thickness, coin.num_edges, coin.mass]
+
+string =("{}- Color: {}, value: {}, diameter(mm): {}, "
+        "thickness(mm): {}, number of edges: {}, mass(g): {}".format(*arguments))
+print(string)
