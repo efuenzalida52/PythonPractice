@@ -106,7 +106,7 @@ class Half_Dollar(Coin):
             "original_value": 0.50,
             "clean_color": "silver",
             "rusty_color": "blue",
-            "num_edges": ,
+            "num_edges": 9 ,
             "diameter": 24.5,
             "thickness": 1.78,
             "mass": 8.00
