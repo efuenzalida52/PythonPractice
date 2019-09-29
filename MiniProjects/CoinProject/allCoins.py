@@ -163,6 +163,6 @@ for coin in coins:
     arguments = [coin, coin.color, coin.value, coin.diameter,
                  coin.thickness, coin.num_edges, coin.mass]
 
-string =("{}- Color: {}, value: {}, diameter(mm): {}, "
+    string =("{}- Color: {}, value: {}, diameter(mm): {}, "
         "thickness(mm): {}, number of edges: {}, mass(g): {}".format(*arguments))
-print(string)
+    print(string)
